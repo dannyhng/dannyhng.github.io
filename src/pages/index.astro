@@ -26,9 +26,15 @@ import Layout from '../layouts/Layout.astro';
           <h1>Hi, I'm <span class="highlight">Danny Hoang</span></h1>
           <p class="tagline">Networking | Infrastructure | Automation</p>
           <div class="badge-row">
-            <span class="badge">CCNA Certified</span>
-            <span class="badge">Security+</span>
-            <span class="badge">A+</span>
+            <a href="https://www.credly.com/earner/earned/badge/bac2d763-b0a7-43b0-a474-4feee6887ff3" target="_blank" class="badge-link">
+             <span class="badge">CCNA Certified</span>
+            </a>
+            <a href="https://www.credly.com/earner/earned/badge/8779ae6c-8125-4b52-9319-59306e1958e0" target="_blank" class="badge-link">
+              <span class="badge">Security+</span>
+            </a>
+            <a href="https://www.credly.com/earner/earned/badge/b9c68784-f501-4e13-ae66-e99de2c2fef8" target="_blank" class="badge-link">
+              <span class="badge">A+</span>
+            </a>
           </div>
           <p class="hero-bio">
             I build and experiment with network infrastructure, from Cisco lab topologies to
@@ -160,6 +166,32 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
+    <section id="education" class="education-section">
+  <div class="section-header">
+    <h2>Education & Growth</h2>
+  </div>
+  
+  <div class="education-grid">
+    <div class="education-card">
+      <div class="edu-status">Completed</div>
+      <div class="edu-content">
+        <h3>A.S. in Computer Science</h3>
+        <p class="school">Mt. Hood Community College</p>
+        <p class="edu-detail">Graduated December 2025. Focused on Software Development, Data Structures, and Networking fundamentals.</p>
+      </div>
+    </div>
+
+    <div class="education-card incoming">
+      <div class="edu-status">Incoming</div>
+      <div class="edu-content">
+        <h3>B.S. in Network Engineering & Security</h3>
+        <p class="school">Western Governors University</p>
+        <p class="edu-detail">Focusing on Cloud Security, Enterprise Networking, and advanced Infrastructure as Code (IaC) architectures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section id="contact" class="contact-section">
       <div class="contact-container">
         <h2>Get in Touch</h2>
@@ -191,15 +223,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --bg: #ffffff;
-    --text-main: #111827;
-    --text-muted: #4b5563;
-    --border: #e5e7eb;
-    --card-bg: #f9fafb;
-  }
+  :root { --primary: #2563eb; --primary-dark: #1d4ed8; --bg: #ffffff; --text-main: #111827; --text-muted: #4b5563; --border: #e5e7eb; --card-bg: #f9fafb; }
 
   body { background-color: var(--bg); margin: 0; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
 
@@ -226,6 +250,8 @@ import Layout from '../layouts/Layout.astro';
   .badge-row { display: flex; gap: 0.75rem; margin: 1.5rem 0; }
   .badge { background: #eff6ff; color: var(--primary); padding: 0.35rem 1rem; border-radius: 99px; font-size: 0.85rem; font-weight: 700; border: 1px solid #dbeafe; }
   .hero-bio { font-size: 1.2rem; line-height: 1.6; margin-bottom: 0; color: var(--text-muted); }
+  .badge-link { text-decoration: none; transition: 0.2s; }
+  .badge-link:hover { transform: translateY(-2px); filter: brightness(0.95); }
 
   /* Projects */
   .section-header { margin: 4rem 0 2rem 0; }
@@ -250,11 +276,6 @@ import Layout from '../layouts/Layout.astro';
   .philosophy-image-wrapper { float: right; width: 300px; margin-left: 3rem; margin-bottom: 1.5rem; }
   .philosophy-img { width: 100%; border-radius: 20px; border: 3px solid var(--primary); box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.2); }
   .philosophy-text p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 1.5rem; }
-/* On mobile, we set white-space back to normal so the title doesn't cut off on small screens */
-@media (max-width: 768px) {
-  .philosophy-image-wrapper { float: none; width: 100%; margin-left: 0; margin-bottom: 2rem; }
-  .philosophy-section h2 { font-size: 2rem; white-space: normal; }
-}
 
   /* Skills */
   .skills-section { margin-top: 4rem; }
@@ -262,6 +283,17 @@ import Layout from '../layouts/Layout.astro';
   .skill-box { padding: 2.5rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); }
   .skill-box h4 { margin: 0 0 1.25rem 0; color: var(--primary); font-size: 1.2rem; font-weight: 800; border-bottom: 3px solid var(--primary); display: inline-block; padding-bottom: 0.4rem; }
   .skill-box p { font-size: 1.05rem; margin: 0; color: var(--text-muted); line-height: 1.6; }
+
+  /* Education Section (Global) */
+  .education-section { margin: 6rem 0; }
+  .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .education-card { padding: 2.5rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); position: relative; }
+  .education-card.incoming { border-style: dashed; border-color: var(--primary); background: #f0f7ff; }
+  .edu-status { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; background: #e5e7eb; color: var(--text-muted); margin-bottom: 1rem; }
+  .incoming .edu-status { background: var(--primary); color: white; }
+  .education-card h3 { margin: 0; font-size: 1.4rem; color: var(--text-main); font-weight: 800; }
+  .school { font-weight: 700; color: var(--primary); margin: 0.25rem 0 1rem 0; }
+  .edu-detail { font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
   /* Contact */
   .contact-section { margin: 4rem 0 8rem 0; }
@@ -277,40 +309,29 @@ import Layout from '../layouts/Layout.astro';
   .footer { border-top: 1px solid var(--border); padding: 3rem 0; background: var(--card-bg); }
   .footer-content { max-width: 1000px; margin: auto; padding: 0 1.5rem; color: var(--text-muted); font-weight: 500; }
 
-  /* Responsive */
-  /* Mobile Optimization - Aggressive Scaling */
+  /* Mobile Optimization */
   @media (max-width: 768px) {
-    /* 1. Header: Shrink and give it room */
     .nav-container { padding: 0 1rem; }
     .nav-logo { font-size: 1.1rem; }
     .nav-links { gap: 0.6rem; }
     .nav-links a { font-size: 0.7rem; }
-    .nav-btn { display: none; } /* Hide the LinkedIn button on tiny screens to save space */
-
-    /* 2. Hero Section: Tighten the gaps */
+    .nav-btn { display: none; }
     .hero { padding: 3rem 0; }
     .hero-container { flex-direction: column; text-align: center; gap: 1.5rem; }
-    
-    /* 3. Avatar: Make it a badge size so it doesn't push the text down */
     .hero-avatar { width: 110px; height: 110px; border-width: 3px; }
-    
-    /* 4. Typography: Dramatic shrink for mobile */
     h1 { font-size: 1.8rem; line-height: 1.1; margin-bottom: 0.5rem; }
     .tagline { font-size: 0.9rem; letter-spacing: 0; margin-bottom: 1rem; }
     .hero-bio { font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
-
-    /* 5. Badges: Make them smaller and pill-like */
     .badge-row { justify-content: center; gap: 0.4rem; margin: 1rem 0; }
     .badge { font-size: 0.7rem; padding: 0.2rem 0.6rem; }
-
-    /* 6. Projects & Sections */
-    .project-grid { gap: 1.5rem; }
+    .project-grid { gap: 1.5rem; grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; }
     .card-content { padding: 1.5rem; }
     .philosophy-section { padding: 2rem 1.25rem; border-radius: 20px; }
     .philosophy-section h2 { font-size: 1.5rem; white-space: normal; }
-    
-    /* 7. Skills: Make boxes stack nicely */
+    .philosophy-image-wrapper { float: none; width: 100%; margin: 0 0 2rem 0; }
     .skills-container { grid-template-columns: 1fr; gap: 1rem; }
     .skill-box { padding: 1.5rem; }
+    .education-grid { grid-template-columns: 1fr; }
   }
 </style>
