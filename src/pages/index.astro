@@ -1,11 +1,292 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Danny Hoang | Networking | Infrastructure | Automation">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">DH<span>.</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#philosophy">Mindset</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/vietthuhoang/" target="_blank" rel="noopener noreferrer" class="nav-btn">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="hero-container">
+        <div class="avatar-wrapper">
+          <img src="/images/profile-photo.jpg" alt="Danny Hoang" class="hero-avatar" />
+        </div>
+        <div class="hero-content">
+          <h1>Hi, I'm <span class="highlight">Danny Hoang</span></h1>
+          <p class="tagline">Networking | Infrastructure | Automation</p>
+          <div class="badge-row">
+            <span class="badge">CCNA Certified</span>
+            <span class="badge">Security+</span>
+            <span class="badge">A+</span>
+          </div>
+          <p class="hero-bio">
+            I build and experiment with network infrastructure, from Cisco lab topologies to
+            containerized services running on Linux servers. My goal is to understand how systems actually
+            work, from the physical network up through the applications that run on it.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects" class="projects-section">
+      <div class="section-header">
+        <h2>Technical Projects</h2>
+      </div>
+      <div class="project-grid">
+        <div class="project-card featured">
+          <div class="card-content">
+            <div class="card-header">
+              <span class="category">Primary Lab / Infrastructure</span>
+              <h3>Hybrid Homelab Infrastructure</h3>
+            </div>
+            <div class="img-container">
+              <img src="/images/homelab-diagram.png" alt="Network diagram of hybrid homelab infrastructure showing Proxmox, Docker, and Tailscale topology" class="project-img" />
+            </div>
+            <div class="tags">
+              <span>Proxmox</span> <span>Ansible</span> <span>Docker</span> <span>Tailscale</span>
+            </div>
+            <p class="project-description">
+              Migrated my homelab from manual configuration ("ClickOps") to Infrastructure as Code.
+              Designed a split topology that isolates core network services from compute workloads.
+            </p>
+            <a href="https://github.com/dannyhng/hybrid-homelab-infrastructure" target="_blank" rel="noopener noreferrer" class="project-link">View Documentation →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-content">
+            <div class="card-header">
+              <span class="category">ISP / Service Provider</span>
+              <h3>MPLS L3VPN Backbone</h3>
+            </div>
+            <div class="img-container">
+              <img src="/images/mpls-lab.png" alt="MPLS L3VPN lab topology diagram showing ISP backbone with VRF tenant isolation" class="project-img" />
+            </div>
+            <div class="tags">
+              <span>MPLS</span> <span>MP-BGP</span> <span>VRFs</span> <span>EVE-NG</span>
+            </div>
+            <p>Built an MPLS backbone in my lab to simulate an ISP environment with VRF-based tenant isolation.</p>
+            <a href="https://github.com/dannyhng/isp-mpls-l3vpn-lab" target="_blank" rel="noopener noreferrer" class="project-link">View Documentation →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-content">
+            <div class="card-header">
+              <span class="category">Enterprise Networking</span>
+              <h3>Enterprise Network Topology Lab</h3>
+            </div>
+            <div class="img-container">
+              <img src="/images/ccna-lab.png" alt="CCNA enterprise lab topology covering OSPF, HSRP, VLANs and wireless LAN controller" class="project-img" />
+            </div>
+            <div class="tags">
+              <span>OSPF</span> <span>HSRP</span> <span>WLC</span> <span>ACLs</span>
+            </div>
+            <p>Built an enterprise-style lab covering major CCNA topics like VLAN segmentation,
+              dynamic routing (OSPF), and high-availability (HSRP).</p>
+            <a href="https://github.com/dannyhng/ccna-full-config-lab" target="_blank" rel="noopener noreferrer" class="project-link">View Documentation →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="philosophy-section">
+  <h2>The Logic Behind the Build</h2>
+
+  <div class="philosophy-content">
+    <div class="philosophy-image-wrapper">
+      <img src="/images/car.jpeg" alt="Hands-on troubleshooting mindset" class="philosophy-img" />
+    </div>
+
+    <div class="philosophy-text">
+      <p>
+        Long before I was configuring switches, I was in the garage trying to figure out why something wasn't working. 
+        Working on cars taught me something that no certification ever could. In any complex system, the problem 
+        is rarely where you expect it to be. It's the small things. A loose ground. A vacuum leak. 
+        A connection that looks fine until you actually pull on it.
+      </p>
+      <p>
+        Finding those issues requires patience and a methodical approach, especially when everything on the surface 
+        looks normal. That's the part most people skip. They see green lights and assume nothing is wrong. 
+        But some of the most important problems are the quiet ones. The ones that don't throw errors, 
+        don't cause outages, don't announce themselves at all. 
+      </p>
+      <p>
+        The only way to find them is to actually look. Pull the data. Run the scan. Watch what the system is telling you beneath the surface.
+        That's exactly what drew me to networking. The same instinct that makes me reach for a diagnostic scanner 
+        on a car is the same instinct that makes me run a packet capture on a network that seems stable.
+      </p>
+      <p>
+        What I've come to believe is that cars and networks have far more in common than most people would think. 
+        They're both layered systems that demand respect for the fundamentals. They both reward the person who understands 
+        not just what each component does, but how everything interacts. 
+      </p>
+      <p>
+        That philosophy, staying curious, reading the data, never trusting "good enough," is what I bring to my work as a network professional. 
+        Not just to keep things running, but to understand why they run, and to catch what others miss before it ever becomes a problem.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <section id="skills" class="skills-section">
+      <div class="section-header">
+        <h2>Core Stack</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-box">
+          <h4>Networking</h4>
+          <p>OSPF, BGP, MPLS, VLANs, VPN (Tailscale), Cisco IOS, pfSense</p>
+        </div>
+        <div class="skill-box">
+          <h4>Automation</h4>
+          <p>Python (Netmiko), Ansible, Terraform, PowerShell, Bash, Git</p>
+        </div>
+        <div class="skill-box">
+          <h4>Infrastructure</h4>
+          <p>Proxmox VE, Docker, Microsoft Entra ID, Windows Server 2022</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2>Get in Touch</h2>
+        <p class="contact-sub">Open to network engineering, infrastructure, and DevOps opportunities.</p>
+        <div class="contact-links">
+          <a href="mailto:thuvhoang19@gmail.com" class="contact-card">
+            <span class="contact-icon">✉</span>
+            <span>thuvhoang19@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/vietthuhoang/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-icon">in</span>
+            <span>linkedin.com/in/vietthuhoang</span>
+          </a>
+          <a href="https://github.com/dannyhng" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <span class="contact-icon">GH</span>
+            <span>github.com/dannyhng</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2026 Danny Hoang | Portland, OR</p>
+    </div>
+  </footer>
 </Layout>
+
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+    --card-bg: #f9fafb;
+  }
+
+  body { background-color: var(--bg); margin: 0; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
+
+  /* Navbar */
+  .navbar { border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 100; }
+  .nav-container { max-width: 1000px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1.5rem; }
+  .nav-logo { font-weight: 800; font-size: 1.5rem; color: var(--text-main); text-decoration: none; }
+  .nav-logo span { color: var(--primary); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.9rem; }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-btn { background: var(--text-main); color: white !important; padding: 0.5rem 1rem; border-radius: 6px; }
+
+  main { max-width: 1000px; margin: auto; padding: 0 1.5rem; }
+
+  /* Hero */
+  .hero { padding: 8rem 0; }
+  .hero-container { display: flex; align-items: center; gap: 4rem; }
+  .avatar-wrapper { flex-shrink: 0; }
+  .hero-avatar { width: 210px; height: 210px; border-radius: 50%; border: 5px solid var(--primary); object-fit: cover; box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15); }
+  h1 { font-size: 4rem; font-weight: 900; margin: 0; letter-spacing: -0.05em; line-height: 1; }
+  .highlight { color: var(--primary); }
+  .tagline { font-size: 1.5rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500; }
+  .badge-row { display: flex; gap: 0.75rem; margin: 1.5rem 0; }
+  .badge { background: #eff6ff; color: var(--primary); padding: 0.35rem 1rem; border-radius: 99px; font-size: 0.85rem; font-weight: 700; border: 1px solid #dbeafe; }
+  .hero-bio { font-size: 1.2rem; line-height: 1.6; margin-bottom: 0; color: var(--text-muted); }
+
+  /* Projects */
+  .section-header { margin: 4rem 0 2rem 0; }
+  .section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+  .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .project-card.featured { grid-column: span 2; border-left: 8px solid var(--primary); }
+  .project-card { border: 1px solid var(--border); border-radius: 20px; background: white; transition: 0.4s; }
+  .project-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); border-color: var(--primary); }
+  .card-content { padding: 3rem; }
+  .category { font-size: 0.8rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; }
+  .img-container { background: #fdfdfd; border-radius: 14px; margin: 2rem 0; border: 1px solid var(--border); overflow: hidden; display: flex; justify-content: center; align-items: center; }
+  .project-img { width: 100%; height: auto; max-height: 500px; object-fit: contain; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .tags span { font-size: 0.8rem; background: var(--card-bg); padding: 0.3rem 0.9rem; border-radius: 8px; border: 1px solid var(--border); font-weight: 700; color: var(--text-muted); }
+  .project-link { display: inline-block; font-weight: 800; color: var(--primary); text-decoration: none; margin-top: 1.5rem; border-bottom: 2px solid transparent; transition: 0.2s; }
+  .project-link:hover { border-bottom-color: var(--primary); }
+
+  /* Philosophy */
+  .philosophy-section { margin: 10rem 0; padding: 5rem; background: var(--text-main); color: white; border-radius: 32px; overflow: hidden; }
+  .philosophy-section h2 { color: var(--primary); font-size: 2.75rem; margin-top: 0; margin-bottom: 2.5rem; font-weight: 900; width: 100%; white-space: nowrap; }
+  .philosophy-content { line-height: 1.7; }
+  .philosophy-image-wrapper { float: right; width: 300px; margin-left: 3rem; margin-bottom: 1.5rem; }
+  .philosophy-img { width: 100%; border-radius: 20px; border: 3px solid var(--primary); box-shadow: 20px 20px 0px rgba(37, 99, 235, 0.2); }
+  .philosophy-text p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 1.5rem; }
+/* On mobile, we set white-space back to normal so the title doesn't cut off on small screens */
+@media (max-width: 768px) {
+  .philosophy-image-wrapper { float: none; width: 100%; margin-left: 0; margin-bottom: 2rem; }
+  .philosophy-section h2 { font-size: 2rem; white-space: normal; }
+}
+
+  /* Skills */
+  .skills-section { margin-top: 4rem; }
+  .skills-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+  .skill-box { padding: 2.5rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border); }
+  .skill-box h4 { margin: 0 0 1.25rem 0; color: var(--primary); font-size: 1.2rem; font-weight: 800; border-bottom: 3px solid var(--primary); display: inline-block; padding-bottom: 0.4rem; }
+  .skill-box p { font-size: 1.05rem; margin: 0; color: var(--text-muted); line-height: 1.6; }
+
+  /* Contact */
+  .contact-section { margin: 4rem 0 8rem 0; }
+  .contact-container { text-align: center; }
+  .contact-container h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+  .contact-sub { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 3rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+  .contact-card { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.5rem; border: 1px solid var(--border); border-radius: 12px; text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: 0.2s; background: white; }
+  .contact-card:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+  .contact-icon { width: 32px; height: 32px; background: #eff6ff; color: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; }
+
+  /* Footer */
+  .footer { border-top: 1px solid var(--border); padding: 3rem 0; background: var(--card-bg); }
+  .footer-content { max-width: 1000px; margin: auto; padding: 0 1.5rem; color: var(--text-muted); font-weight: 500; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-container, .philosophy-container { flex-direction: column; text-align: center; gap: 3rem; }
+    .project-grid, .skills-container { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; border-left: 8px solid var(--primary); }
+    .philosophy-section { padding: 2rem; }
+    .philosophy-image-wrapper { flex: 0 0 auto; width: 100%; }
+    .philosophy-img { box-shadow: 10px 10px 0px rgba(37, 99, 235, 0.2); }
+    h1 { font-size: 3rem; }
+    .badge-row { justify-content: center; }
+    .contact-links { flex-direction: column; align-items: center; }
+  }
+</style>
