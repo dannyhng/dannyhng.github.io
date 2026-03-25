@@ -9,13 +9,13 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # This fixes the warning you saw
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install, build, and upload with Astro
         uses: withastro/action@v2
+        with:
+          node-version: 24 # Now the Robot will use the same version as your laptop
   deploy:
     needs: build
     runs-on: ubuntu-latest
