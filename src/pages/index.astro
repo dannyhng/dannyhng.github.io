@@ -268,7 +268,7 @@ import Layout from '../layouts/Layout.astro';
   .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   .reveal.visible {
     opacity: 1;
@@ -753,7 +753,7 @@ import Layout from '../layouts/Layout.astro';
         // stagger siblings
         const siblings = Array.from(e.target.parentElement.querySelectorAll('.reveal'));
         const idx = siblings.indexOf(e.target);
-        setTimeout(() => e.target.classList.add('visible'), idx * 80);
+        setTimeout(() => e.target.classList.add('visible'), idx * 40);
         observer.unobserve(e.target);
       }
     });
